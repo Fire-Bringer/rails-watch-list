@@ -10,7 +10,7 @@ require 'uri'
 require 'net/http'
 require 'json'
 
-url = URI("https://tmdb.lewagon.com/movie/top_rated")
+url = URI('https://tmdb.lewagon.com/movie/top_rated')
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
 
