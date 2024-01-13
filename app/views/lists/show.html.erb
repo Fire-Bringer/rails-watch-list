@@ -1,1 +1,9 @@
 <h1>List Show</h1>
+
+<ul>
+  <% @list.movies.each do |list| %>
+    <li><%= list.title %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back to Lists Index', lists_path %>
