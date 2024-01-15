@@ -3,5 +3,5 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 // Added from Challenge Instructions
-import "bootstrap"
-import "@popperjs/core"
+// import "bootstrap"
+// import "@popperjs/core"

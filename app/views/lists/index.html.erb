@@ -1,9 +1,63 @@
-<h1>Lists Index</h1>
+<!--Navbar-->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "movie_icon.png" %>
+    <% end %>
 
-<ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "My Lists", lists_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New Lists", new_list_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "profile.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--Banner-->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://entrepreneurship.babson.edu/wp-content/uploads/2020/10/Movie-1200-630.jpg);">
+  <div class="container">
+    <h1>Make your viewing experience <strong>YOUR OWN</strong>!</h1>
+    <p>The cinematic world at your fingertips</p>
+    <a class="btn btn-flat" href="#">New List</a>
+  </div>
+</div>
+
+
+
+<h1>My Lists</h1>
+
+<div class="cards">
   <% @lists.each do |list| %>
-    <li><%= link_to list.name, list %></li>
+    <%= link_to list do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg)">
+      <%= list.name %>
+      </div>
+    <% end %>
   <% end %>
-</ul>
+</div>
 
-<%= link_to 'Create a New List', new_list_path %>
+<%= link_to "Create New List", new_list_path, class: "btn btn-gradient" %>
+

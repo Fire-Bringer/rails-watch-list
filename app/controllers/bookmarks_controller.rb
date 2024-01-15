@@ -1,3 +1,6 @@
+# Frozen-string-literal: true
+
+# Bookmarks Class
 class BookmarksController < ApplicationController
   before_action :set_bookmark, only: %i[destroy]
   before_action :set_list, only: %i[new create]
@@ -18,7 +21,7 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark.destroy
-    redirect_to list_path(@bookmark.list), notice: 'Bookmark has been deleted'
+    redirect_to list_path(@bookmark.list), status: :see_other, notice: 'Bookmark has been deleted'
   end
 
   private
