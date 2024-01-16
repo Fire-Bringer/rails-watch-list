@@ -37,7 +37,7 @@
 </div>
 
 <!--Banner-->
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://entrepreneurship.babson.edu/wp-content/uploads/2020/10/Movie-1200-630.jpg);">
+<div class="banner">
   <div class="container">
     <h1>Make your viewing experience <strong>YOUR OWN</strong>!</h1>
     <p>The cinematic world at your fingertips</p>
@@ -46,18 +46,29 @@
 </div>
 
 
-
+<!--Lists Categories-->
 <h1>My Lists</h1>
 
-<div class="cards">
+<div class="cards rounded d-flex justify-content-around flex-wrap">
   <% @lists.each do |list| %>
     <%= link_to list do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg)">
+      <div class="card-category">
       <%= list.name %>
       </div>
     <% end %>
   <% end %>
 </div>
 
-<%= link_to "Create New List", new_list_path, class: "btn btn-gradient" %>
+<%= link_to "Create New List", new_list_path, class: "btn btn-gradient " %>
 
+<!--Footer-->
+<div class="footer" >
+  <div class="footer-links">
+    <a href="https://github.com/Fire-Bringer" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/barret_wallace/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/rashad-dupaty-00a8ab24b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Front-End is harder than I thought... <i class="fa-regular fa-face-dizzy"></i>
+  </div>
+</div>
