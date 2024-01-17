@@ -8,13 +8,14 @@
   <div class="card-product m-3">
     <div class="my-2"><%= image_tag bookmark.movie.poster_url %></div>
     <div class="card-product-infos">
-      <h2><%= bookmark.movie.title %></h2>
+      <h2><%= bookmark.movie.title + " - " + bookmark.movie.rating.round(1).to_s + "⭐" %></h2>
       <p><%= bookmark.movie.overview %></p>
-      <%= link_to 'Delete', bookmark_path(bookmark), class: "btn btn-danger mt-2 text-light", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+      <%= link_to bookmark_path(bookmark), class: "btn btn-danger mt-2 text-light", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+        <i class="fa-solid fa-trash"></i>
+        <% end %>
     </div>
   </div>
 <% end %>
-
 <div class="d-block mx-auto m-3" style="width: 200px">
   <%= link_to "Back to Lists Index", root_path, class: "btn btn-gradient" %>
 </div>

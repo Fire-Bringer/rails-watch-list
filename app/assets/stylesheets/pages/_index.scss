@@ -1,2 +1,23 @@
 // Import page-specific CSS files here.
 @import "home";
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 4rem;
+}
+
+h1 {
+  margin: 2rem;
+  font-weight: bold;
+  color: black;
+}
