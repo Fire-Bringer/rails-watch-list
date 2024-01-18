@@ -1,7 +1,9 @@
-<div class="m-5">
-  <%= simple_form_for(list) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+<div class="d-flex row justify-content-center">
+  <div class="m-5 w-75">
+    <%= simple_form_for(list) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
