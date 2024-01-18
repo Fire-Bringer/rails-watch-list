@@ -1,5 +1,7 @@
 .banner {
   background-image: asset-url("theater.jpg");
+  opacity: 0.9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   background-size: cover;
   background-position: center;
   padding: 150px 0;
