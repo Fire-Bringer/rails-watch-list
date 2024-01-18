@@ -1,21 +1,21 @@
 <h1><%= @list.name %> List</h1>
-
-<div class="d-flex flex-column">
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="card-product m-3 text-white bg-dark w-75">
-      <div class="my-2"><%= image_tag bookmark.movie.poster_url %></div>
-      <div class="card-product-infos">
-        <h2><%= bookmark.movie.title + " - " + bookmark.movie.rating.round(1).to_s + "⭐" %></h2>
-        <p><%= bookmark.movie.overview %></p>
-        <div class="d-flex justify-content-end">
-          <%= link_to bookmark_path(bookmark), class: "btn btn-danger mt-2 text-light", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
-            <i class="fa-solid fa-trash"></i>
-            <% end %>
+  
+  <div class="d-flex flex-column">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card-product m-3 text-white bg-dark w-75">
+        <div class="my-2"><%= image_tag bookmark.movie.poster_url %></div>
+        <div class="card-product-infos">
+          <h2><%= bookmark.movie.title + " - " + bookmark.movie.rating.round(1).to_s + "⭐" %></h2>
+          <p><%= bookmark.movie.overview %></p>
+          <div class="d-flex justify-content-end">
+            <%= link_to bookmark_path(bookmark), class: "btn btn-danger mt-2 text-light", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+              <i class="fa-solid fa-trash"></i>
+              <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
 <%# "hr" sets a border break  %>
 <hr class="my-5">
