@@ -10,7 +10,7 @@ class ListsController < ApplicationController
     @bookmark = Bookmark.new
     # Makes a variable to be used in the new review form on the List show view
     # Sets the argument as the current list within the show view
-    # @review = Review.new(list: @list)
+    @review = Review.new(list: @list)
   end
 
   def new
