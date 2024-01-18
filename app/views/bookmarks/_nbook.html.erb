@@ -1,6 +1,6 @@
 <div class="m-5">
   <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.association :movie, collection: Movie.all, placeholder: "Select a movie" %>
+    <%= f.association :movie, collection: Movie.all, prompt: "Select a movie" %>
     <%= f.input :comment, placeholder: "What you think about the movie" %>
     <div class="d-block mx-auto m-3" style="width: 200px">
       <%= f.button :submit, class:"btn btn-success" %>

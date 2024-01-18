@@ -13,9 +13,7 @@
   </div>
 <% end %>
 
-<div class="d-block mx-auto m-3" style="width: 200px">
-  <%= link_to "Add a New Bookmark", new_list_bookmark_path(@list), class: "btn btn-success text-light" %>
-</div>
+<%= render "bookmarks/nbook", list: @list, bookmark: @bookmark %>
 
 <div class="d-block mx-auto m-3" style="width: 200px">
   <%= link_to "Back to Lists Index", root_path, class: "btn btn-gradient" %>
